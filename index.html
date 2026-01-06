@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Moon Classy Salon | Eldoret</title>
+  <title>Moon Classy Salon | Eldoret | Nails, Hair, Spa & Beauty</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- SEO Meta Tags -->
@@ -10,9 +10,13 @@
   <meta name="keywords" content="salon, Eldoret, beauty, nails, hair, spa, makeup, braids, juakali">
   <meta property="og:title" content="Moon Classy Salon | Eldoret">
   <meta property="og:image" content="https://i.postimg.cc/vm9dgTf6/00398b4b5ea78f645851dc3e1b968854.jpg">
+  <meta name="theme-color" content="#4b2c82">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     * {
@@ -27,6 +31,7 @@
       background: radial-gradient(circle at top, #ff9ff3, #4b2c82, #050816);
       color: #fff;
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
     a {
@@ -65,10 +70,16 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: linear-gradient(to right, rgba(5, 8, 22, 0.95), rgba(75, 44, 130, 0.9));
+      z-index: 100;
+      background: linear-gradient(to right, rgba(5, 8, 22, 0.98), rgba(75, 44, 130, 0.95));
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .nav-scrolled {
+      padding: 8px 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     .nav {
@@ -78,6 +89,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      transition: padding 0.3s ease;
     }
 
     .logo {
@@ -118,45 +130,71 @@
       padding: 6px 12px;
       border-radius: 999px;
       transition: all 0.3s ease;
+      position: relative;
     }
 
-    nav ul li a:hover {
-      background: rgba(255, 255, 255, 0.12);
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.18);
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: linear-gradient(135deg, #ff9ff3, #feca57);
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 70%;
     }
 
     .cta-nav {
       background: linear-gradient(135deg, #ff9ff3, #feca57);
       color: #050816;
       border-radius: 999px;
-      padding: 7px 18px;
+      padding: 8px 20px;
       font-size: 13px;
       font-weight: 700;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      transition: all 0.3s ease;
     }
 
-    .cta-nav span {
-      font-size: 18px;
+    .cta-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 5px;
     }
 
     /* Hero */
     .hero {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 60px 20px 40px;
+      padding: 80px 20px 60px;
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 40px;
+      gap: 50px;
       align-items: center;
     }
 
     @media (max-width: 860px) {
       .hero {
         grid-template-columns: 1fr;
-        padding-top: 40px;
+        padding-top: 50px;
+        gap: 40px;
       }
     }
 
@@ -165,20 +203,23 @@
       letter-spacing: 3px;
       font-size: 11px;
       color: #feca57;
+      display: inline-block;
+      margin-bottom: 10px;
     }
 
     .hero-title {
       margin-top: 10px;
-      font-size: 36px;
+      font-size: 42px;
       line-height: 1.1;
     }
 
     .hero-title span {
       display: block;
       font-family: 'Great Vibes', cursive;
-      font-size: 52px;
+      font-size: 60px;
       margin-top: 4px;
       color: #ff9ff3;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     .typing {
@@ -195,16 +236,17 @@
 
     .hero-sub {
       margin-top: 18px;
-      font-size: 14px;
+      font-size: 15px;
       max-width: 480px;
       color: #f1f2f6;
+      opacity: 0.9;
     }
 
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 18px;
+      margin-top: 22px;
       font-size: 11px;
     }
 
@@ -214,10 +256,16 @@
       border: 1px solid rgba(255, 255, 255, 0.16);
       background: rgba(5, 8, 22, 0.55);
       backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
+
+    .pill:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
     }
 
     .hero-actions {
-      margin-top: 26px;
+      margin-top: 30px;
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
@@ -225,32 +273,44 @@
     }
 
     .btn-main {
-      padding: 10px 22px;
+      padding: 12px 28px;
       border-radius: 999px;
       border: none;
       cursor: pointer;
       background: linear-gradient(135deg, #ff9ff3, #feca57);
       color: #050816;
       font-weight: 700;
-      font-size: 13px;
+      font-size: 14px;
       display: inline-flex;
       align-items: center;
       gap: 10px;
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn-main:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     }
 
     .btn-outline {
-      padding: 9px 20px;
+      padding: 11px 26px;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.4);
       background: transparent;
       color: #fff;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #ff9ff3;
     }
 
     .hero-right {
@@ -263,18 +323,28 @@
     .hero-card {
       position: relative;
       width: 100%;
-      max-width: 320px;
+      max-width: 350px;
       border-radius: 24px;
       overflow: hidden;
       background: linear-gradient(145deg, rgba(255, 159, 243, 0.16), rgba(9, 132, 227, 0.16));
       border: 1px solid rgba(255, 255, 255, 0.3);
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+      transition: transform 0.5s ease;
+    }
+
+    .hero-card:hover {
+      transform: translateY(-10px);
     }
 
     .hero-card img {
       width: 100%;
       display: block;
       height: auto;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-card:hover img {
+      transform: scale(1.05);
     }
 
     .hero-card-footer {
@@ -315,6 +385,7 @@
       align-items: center;
       justify-content: center;
       animation: spin 12s linear infinite;
+      z-index: 2;
     }
 
     .floating-badge-inner {
@@ -340,46 +411,59 @@
     section {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 20px 20px;
+      padding: 60px 20px 30px;
+      scroll-margin-top: 80px;
     }
 
     .section-title {
-      font-size: 24px;
-      margin-bottom: 8px;
+      font-size: 28px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .section-title span {
-      font-size: 10px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 3px;
       color: #feca57;
     }
 
     .section-sub {
-      font-size: 13px;
+      font-size: 15px;
       color: #f1f2f6;
-      max-width: 540px;
+      max-width: 600px;
+      margin-bottom: 10px;
+      opacity: 0.9;
     }
 
     /* Services */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 18px;
-      margin-top: 26px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
     }
 
     .service-card {
-      padding: 16px 16px 18px;
-      border-radius: 16px;
-      background: rgba(5, 8, 22, 0.8);
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(5, 8, 22, 0.85);
       border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
       position: relative;
       overflow: hidden;
+      transition: all 0.4s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 159, 243, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
     }
 
     .service-card::before {
@@ -396,35 +480,170 @@
     }
 
     .service-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 6px;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-title i {
+      color: #ff9ff3;
     }
 
     .service-desc {
-      font-size: 12px;
-      line-height: 1.5;
+      font-size: 13px;
+      line-height: 1.6;
       color: #dfe4ea;
+      margin-bottom: 15px;
+      flex-grow: 1;
     }
 
     ul.service-list {
-      list-style: disc;
-      margin-left: 15px;
+      list-style: none;
       margin-top: 6px;
-      font-size: 12px;
+      font-size: 13px;
       color: #dfe4ea;
+    }
+
+    ul.service-list li {
+      padding: 4px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    ul.service-list li:before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: #feca57;
+      font-size: 10px;
+    }
+
+    .service-price {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #feca57;
+      font-weight: 600;
+    }
+
+    /* Packages Section */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .package-card {
+      padding: 25px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(75, 44, 130, 0.2), rgba(5, 8, 22, 0.9));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .package-card.featured {
+      border: 2px solid #feca57;
+      transform: scale(1.03);
+    }
+
+    .package-card.featured:before {
+      content: "POPULAR";
+      position: absolute;
+      top: 15px;
+      right: -30px;
+      background: #feca57;
+      color: #050816;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 35px;
+      transform: rotate(45deg);
+      width: 120px;
+      text-align: center;
+    }
+
+    .package-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #ff9ff3;
+    }
+
+    .package-price {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #feca57;
+    }
+
+    .package-price span {
+      font-size: 13px;
+      font-weight: 400;
+      color: #dfe4ea;
+    }
+
+    .package-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #dfe4ea;
+      margin-bottom: 20px;
+    }
+
+    .package-features {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .package-features li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 13px;
+    }
+
+    .package-features li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #1dd1a1;
+      font-weight: bold;
+    }
+
+    .package-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      text-align: center;
+      background: linear-gradient(135deg, #ff9ff3, #feca57);
+      color: #050816;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .package-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
 
     /* Video Showcase */
     .video-showcase-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px;
       margin-top: 30px;
     }
 
     .video-card {
-      background: rgba(5, 8, 22, 0.8);
+      background: rgba(5, 8, 22, 0.85);
       border-radius: 18px;
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -433,7 +652,7 @@
     }
 
     .video-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
     }
 
@@ -454,13 +673,13 @@
     }
 
     .video-info {
-      padding: 16px 18px 20px;
+      padding: 20px;
     }
 
     .video-title {
       color: #feca57;
       font-size: 16px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       font-weight: 600;
     }
 
@@ -472,10 +691,10 @@
 
     /* Gallery */
     .gallery-grid {
-      margin-top: 26px;
+      margin-top: 30px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
     }
 
     .gallery-item {
@@ -488,6 +707,7 @@
       transform: translateY(0);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
       cursor: pointer;
+      aspect-ratio: 1;
     }
 
     .gallery-item img {
@@ -499,21 +719,22 @@
     }
 
     .gallery-item:hover img {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     .gallery-item::after {
-      content: "Moon Classy Touch";
+      content: "View Full Size";
       position: absolute;
       inset: auto 10px 10px 10px;
       font-size: 11px;
       background: linear-gradient(to right, rgba(5, 8, 22, 0.9), rgba(75, 44, 130, 0.9));
-      padding: 6px 10px;
+      padding: 8px 12px;
       border-radius: 999px;
       text-align: center;
       opacity: 0;
       transform: translateY(12px);
       transition: all 0.25s ease;
+      z-index: 1;
     }
 
     .gallery-item:hover {
@@ -533,7 +754,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(5, 8, 22, 0.95);
+      background: rgba(5, 8, 22, 0.98);
       z-index: 1000;
       display: flex;
       align-items: center;
@@ -565,32 +786,33 @@
 
     .lightbox-close {
       position: absolute;
-      top: -40px;
+      top: -50px;
       right: 0;
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
       color: white;
-      width: 35px;
-      height: 35px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      font-size: 20px;
+      font-size: 22px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .lightbox-close:hover {
       background: rgba(255, 159, 243, 0.5);
+      transform: rotate(90deg);
     }
 
     /* Contact / Location */
     .contact-wrap {
-      margin-top: 24px;
+      margin-top: 30px;
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 22px;
+      gap: 30px;
     }
 
     @media (max-width: 800px) {
@@ -601,57 +823,58 @@
 
     .contact-card,
     .hours-card {
-      padding: 18px 18px 20px;
-      border-radius: 18px;
+      padding: 25px;
+      border-radius: 20px;
       background: rgba(5, 8, 22, 0.85);
       border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .contact-item {
-      margin-top: 10px;
+      margin-top: 15px;
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 12px;
     }
 
     .contact-icon {
-      width: 26px;
-      height: 26px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 18px;
+      flex-shrink: 0;
     }
 
     .hours-list {
-      margin-top: 10px;
-      font-size: 12px;
+      margin-top: 15px;
+      font-size: 13px;
     }
 
     .hours-list div {
       display: flex;
       justify-content: space-between;
-      padding: 4px 0;
+      padding: 8px 0;
       border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
     }
 
     .map-frame {
-      margin-top: 14px;
+      margin-top: 20px;
       border-radius: 14px;
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.18);
-      min-height: 200px;
+      min-height: 220px;
     }
 
     footer {
-      margin-top: 20px;
-      padding: 16px 20px 28px;
+      margin-top: 40px;
+      padding: 25px 20px 30px;
       text-align: center;
-      font-size: 11px;
+      font-size: 12px;
       color: #dfe4ea;
       background: rgba(0, 0, 0, 0.7);
       border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -666,15 +889,15 @@
       position: fixed;
       bottom: 30px;
       right: 30px;
-      width: 45px;
-      height: 45px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       background: linear-gradient(135deg, #ff9ff3, #feca57);
       color: #050816;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 22px;
       cursor: pointer;
       box-shadow: 0 8px 25px rgba(0,0,0,0.4);
       opacity: 0;
@@ -685,13 +908,100 @@
       outline: none;
     }
 
+    .back-to-top:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+
     .back-to-top.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
+    /* Loading animation for images */
+    .loading {
+      background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Mobile menu */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 8, 22, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 99;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      nav ul.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 12px 20px;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .hero-title span {
+        font-size: 48px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn-main, .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .section-title {
+        font-size: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .video-showcase-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    }
+
     /* Small devices */
-    @media (max-width: 600px) {
+    @media (max-width: 480px) {
       .hero-title {
         font-size: 28px;
       }
@@ -700,17 +1010,210 @@
         font-size: 40px;
       }
 
-      .nav ul {
-        display: none;
-      }
-
       .cta-nav {
-        padding: 7px 14px;
+        padding: 8px 16px;
+        font-size: 12px;
       }
 
-      .video-showcase-grid {
+      .services-grid, .packages-grid {
         grid-template-columns: 1fr;
       }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      z-index: 99;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1) rotate(10deg);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .whatsapp-float span {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: rgba(5, 8, 22, 0.9);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .whatsapp-float:hover span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Booking Modal */
+    .booking-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(5, 8, 22, 0.95);
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      padding: 20px;
+    }
+
+    .booking-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: linear-gradient(145deg, rgba(5, 8, 22, 0.95), rgba(75, 44, 130, 0.9));
+      border-radius: 24px;
+      padding: 30px;
+      max-width: 500px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #ff9ff3;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: #ff9ff3;
+      box-shadow: 0 0 0 2px rgba(255, 159, 243, 0.2);
+    }
+
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 16px;
+    }
+
+    textarea.form-control {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #ff9ff3, #feca57);
+      color: #050816;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: linear-gradient(135deg, #1dd1a1, #10ac84);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      z-index: 1002;
+      opacity: 0;
+      transition: all 0.5s ease;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
     }
   </style>
 </head>
@@ -718,24 +1221,32 @@
   <div class="animated-bg"></div>
   <div class="noise-overlay"></div>
 
-  <header>
+  <header id="mainHeader">
     <div class="nav">
       <div class="logo">
         <div class="logo-icon">M</div>
         <div class="logo-text">Moon Classy Salon</div>
       </div>
+      
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
       <nav>
-        <ul>
+        <ul id="mainNav">
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#packages">Packages</a></li>
           <li><a href="#video-showcase">Videos</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Location</a></li>
+          <li>
+            <a href="https://wa.me/254727426795" class="cta-nav">
+              <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+          </li>
         </ul>
       </nav>
-      <a href="https://wa.me/254727426795" class="cta-nav">
-        <span>✦</span> WhatsApp Us
-      </a>
     </div>
   </header>
 
@@ -756,21 +1267,22 @@
           <div class="pill">Nails, tips & gels</div>
           <div class="pill">Braids & weave styling</div>
           <div class="pill">Makeup & micro-blading</div>
+          <div class="pill">Walk-ins welcome</div>
         </div>
         <div class="hero-actions">
-          <a href="https://wa.me/254727426795?text=Hi%20Moon%20Classy%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment" class="btn-main">
-            Book on WhatsApp
+          <button class="btn-main" id="bookNowBtn">
+            <i class="far fa-calendar-check"></i> Book Appointment
             <span>➜</span>
-          </a>
-          <a href="#services" class="btn-outline">
-            View services
+          </button>
+          <a href="https://wa.me/254727426795?text=Hi%20Moon%20Classy%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment" class="btn-outline">
+            <i class="fab fa-whatsapp"></i> Quick WhatsApp
           </a>
         </div>
       </div>
 
       <div class="hero-right">
         <div class="hero-card">
-          <img src="https://i.postimg.cc/vm9dgTf6/00398b4b5ea78f645851dc3e1b968854.jpg" alt="Moon Classy Salon main poster">
+          <img src="https://i.postimg.cc/vm9dgTf6/00398b4b5ea78f645851dc3e1b968854.jpg" alt="Moon Classy Salon main poster" loading="lazy">
           <div class="hero-card-footer">
             <div>
               Moon Classy Salon
@@ -778,7 +1290,7 @@
             </div>
             <div class="rating">
               <span>★★★★★</span>
-              <span>Beauty you can trust</span>
+              <span>5.0 (200+ reviews)</span>
             </div>
           </div>
         </div>
@@ -793,7 +1305,7 @@
     <!-- SERVICES -->
     <section id="services">
       <h2 class="section-title">
-        Our Services
+        <i class="fas fa-spa"></i> Our Services
         <span>Glow from head to toe</span>
       </h2>
       <p class="section-sub">
@@ -802,7 +1314,7 @@
 
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-title">Nails – Gel, Tips & Acrylics</div>
+          <div class="service-title"><i class="fas fa-gem"></i> Nails – Gel, Tips & Acrylics</div>
           <p class="service-desc">
             Perfect finishes on natural nails and extensions with long‑lasting shine and rich colours for every mood or occasion.
           </p>
@@ -811,10 +1323,11 @@
             <li>Tips, overlays & acrylic sets</li>
             <li>Nail art, charms & refills</li>
           </ul>
+          <div class="service-price">From KES 800</div>
         </div>
 
         <div class="service-card">
-          <div class="service-title">Hand & Foot Care</div>
+          <div class="service-title"><i class="fas fa-hand-sparkles"></i> Hand & Foot Care</div>
           <p class="service-desc">
             Pampering sessions that leave your hands and feet soft, hydrated and picture‑ready, finished with your favourite polish.
           </p>
@@ -823,10 +1336,11 @@
             <li>Classic & spa pedicure</li>
             <li>Cuticle care & foot scrubs</li>
           </ul>
+          <div class="service-price">From KES 700</div>
         </div>
 
         <div class="service-card">
-          <div class="service-title">Facials & Spa Treats</div>
+          <div class="service-title"><i class="fas fa-spa"></i> Facials & Spa Treats</div>
           <p class="service-desc">
             Deep cleansing and glow‑boosting facial treatments designed to refresh tired skin and restore a healthy, luminous look.
           </p>
@@ -835,10 +1349,11 @@
             <li>Relaxing spa experiences</li>
             <li>Gentle exfoliation & masks</li>
           </ul>
+          <div class="service-price">From KES 1,200</div>
         </div>
 
         <div class="service-card">
-          <div class="service-title">Makeup & Brows</div>
+          <div class="service-title"><i class="fas fa-palette"></i> Makeup & Brows</div>
           <p class="service-desc">
             From soft glam to full bridal, with precise brow work that frames your face and keeps you selfie‑ready all day.
           </p>
@@ -847,10 +1362,11 @@
             <li>Eyebrow tinting & shaping</li>
             <li>Semi‑permanent micro‑blading</li>
           </ul>
+          <div class="service-price">From KES 1,500</div>
         </div>
 
         <div class="service-card">
-          <div class="service-title">Hair Styling & Braids</div>
+          <div class="service-title"><i class="fas fa-cut"></i> Hair Styling & Braids</div>
           <p class="service-desc">
             Trendy protective styles and classic looks that are neat, stylish and comfortable for everyday wear or special events.
           </p>
@@ -859,10 +1375,11 @@
             <li>Twists, crotchet & loc styling</li>
             <li>Wig installation & treatment</li>
           </ul>
+          <div class="service-price">From KES 1,000</div>
         </div>
 
         <div class="service-card">
-          <div class="service-title">Extra Beauty Touches</div>
+          <div class="service-title"><i class="fas fa-star"></i> Extra Beauty Touches</div>
           <p class="service-desc">
             Finish your look with subtle or bold details that highlight your unique style and personality from head to toe.
           </p>
@@ -871,71 +1388,125 @@
             <li>Tattoos (small & stylish)</li>
             <li>Builder gel extensions</li>
           </ul>
+          <div class="service-price">From KES 500</div>
         </div>
       </div>
     </section>
 
-<!-- VIDEO SHOWCASE -->
-<section id="video-showcase">
-  <h2 class="section-title">
-    Nail Art Videos
-    <span>Watch the Magic Happen</span>
-  </h2>
-  <p class="section-sub">
-    See the precision, sparkle, and artistry behind our most popular nail designs in motion. Get inspired for your next visit!
-  </p>
+    <!-- PACKAGES -->
+    <section id="packages">
+      <h2 class="section-title">
+        <i class="fas fa-gift"></i> Beauty Packages
+        <span>Save with our deals</span>
+      </h2>
+      <p class="section-sub">
+        Treat yourself to a complete beauty experience with our curated packages designed for different occasions and needs.
+      </p>
 
-  <div class="video-showcase-grid">
-    
-    <!-- Video 1: Starlit Sparkle Nails -->
-    <div class="video-card">
-      <div class="video-wrapper">
-        <div style="padding:177.78% 0 0 0;position:relative;">
-          <iframe 
-            src="https://player.vimeo.com/video/1151862502?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;background=1" 
-            frameborder="0" 
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-            title="Starlit Sparkle Nails - Moon Classy Salon">
-          </iframe>
+      <div class="packages-grid">
+        <div class="package-card">
+          <h3 class="package-title">Glam & Go</h3>
+          <div class="package-price">KES 2,500 <span>/ session</span></div>
+          <p class="package-desc">
+            Perfect for a quick refresh or special occasion look.
+          </p>
+          <ul class="package-features">
+            <li>Basic Manicure & Pedicure</li>
+            <li>Simple Nail Art</li>
+            <li>Eyebrow Shaping</li>
+            <li>Light Makeup Application</li>
+          </ul>
+          <button class="package-btn" data-package="Glam & Go">Book This Package</button>
+        </div>
+
+        <div class="package-card featured">
+          <h3 class="package-title">Bridal Bliss</h3>
+          <div class="package-price">KES 8,000 <span>/ full day</span></div>
+          <p class="package-desc">
+            Everything you need to look stunning on your special day.
+          </p>
+          <ul class="package-features">
+            <li>Full Bridal Makeup</li>
+            <li>Spa Manicure & Pedicure</li>
+            <li>Hair Styling</li>
+            <li>Touch-ups Throughout Day</li>
+            <li>Pre-wedding Consultation</li>
+          </ul>
+          <button class="package-btn" data-package="Bridal Bliss">Book This Package</button>
+        </div>
+
+        <div class="package-card">
+          <h3 class="package-title">Monthly Glow-Up</h3>
+          <div class="package-price">KES 5,000 <span>/ month</span></div>
+          <p class="package-desc">
+            Regular maintenance for consistent, beautiful results.
+          </p>
+          <ul class="package-features">
+            <li>2x Manicure & Pedicure</li>
+            <li>1x Facial Treatment</li>
+            <li>Eyebrow Maintenance</li>
+            <li>10% Off Additional Services</li>
+          </ul>
+          <button class="package-btn" data-package="Monthly Glow-Up">Book This Package</button>
         </div>
       </div>
-      <div class="video-info">
-        <h3 class="video-title">Starlit Sparkle Nails</h3>
-        <p class="video-desc">Mesmerizing square press-ons with glitter and rhinestone details for a dazzling finish.</p>
-      </div>
-    </div>
+    </section>
 
-    <!-- Video 2: Chic Gel Nail Art -->
-    <div class="video-card">
-      <div class="video-wrapper">
-        <div style="padding:177.78% 0 0 0;position:relative;">
-          <iframe 
-            src="https://player.vimeo.com/video/1151862400?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;background=1" 
-            frameborder="0" 
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-            title="Chic Gel Nail Art - Moon Classy Salon">
-          </iframe>
+    <!-- VIDEO SHOWCASE -->
+    <section id="video-showcase">
+      <h2 class="section-title">
+        <i class="fas fa-play-circle"></i> Nail Art Videos
+        <span>Watch the Magic Happen</span>
+      </h2>
+      <p class="section-sub">
+        See the precision, sparkle, and artistry behind our most popular nail designs in motion. Get inspired for your next visit!
+      </p>
+
+      <div class="video-showcase-grid">
+        <!-- Video 1: Starlit Sparkle Nails -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe 
+              src="https://player.vimeo.com/video/1151862502?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;background=1&amp;muted=1&amp;autoplay=1" 
+              frameborder="0" 
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              title="Starlit Sparkle Nails - Moon Classy Salon"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Starlit Sparkle Nails</h3>
+            <p class="video-desc">Mesmerizing square press-ons with glitter and rhinestone details for a dazzling finish.</p>
+          </div>
+        </div>
+
+        <!-- Video 2: Chic Gel Nail Art -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe 
+              src="https://player.vimeo.com/video/1151862400?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;background=1&amp;muted=1&amp;autoplay=1" 
+              frameborder="0" 
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              title="Chic Gel Nail Art - Moon Classy Salon"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Chic Gel Nail Art</h3>
+            <p class="video-desc">Elegant gel nail designs and art, showcasing clean lines and modern patterns.</p>
+          </div>
         </div>
       </div>
-      <div class="video-info">
-        <h3 class="video-title">Chic Gel Nail Art</h3>
-        <p class="video-desc">Elegant gel nail designs and art, showcasing clean lines and modern patterns.</p>
-      </div>
-    </div>
-    
-  </div>
-  
-  <!-- Add the Vimeo API script ONCE at the end -->
-  <script src="https://player.vimeo.com/api/player.js"></script>
-</section>
+    </section>
+
     <!-- GALLERY -->
     <section id="gallery">
       <h2 class="section-title">
-        Live Gallery
+        <i class="fas fa-images"></i> Live Gallery
         <span>Real looks. Real glam.</span>
       </h2>
       <p class="section-sub">
@@ -995,74 +1566,94 @@
     </section>
 
     <!-- CONTACT / LOCATION -->
-<section id="contact">
-  <h2 class="section-title">
-    Visit & Contact
-    <span>Juakali • Near Marvels • Eldoret</span>
-  </h2>
-  <p class="section-sub">
-    Walk in for a quick glow‑up or book your slot in advance to enjoy a relaxed, personalised beauty experience with the Moon Classy team.
-  </p>
+    <section id="contact">
+      <h2 class="section-title">
+        <i class="fas fa-map-marker-alt"></i> Visit & Contact
+        <span>Juakali • Near Marvels • Eldoret</span>
+      </h2>
+      <p class="section-sub">
+        Walk in for a quick glow‑up or book your slot in advance to enjoy a relaxed, personalised beauty experience with the Moon Classy team.
+      </p>
 
-  <div class="contact-wrap">
-    <div class="contact-card">
-      <h3 style="font-size:16px; margin-bottom:8px;">Contact & Bookings</h3>
+      <div class="contact-wrap">
+        <div class="contact-card">
+          <h3 style="font-size:18px; margin-bottom:15px; color:#ff9ff3;">Contact & Bookings</h3>
 
-      <div class="contact-item">
-        <div class="contact-icon">📱</div>
-        <div>
-          <strong>WhatsApp & Calls</strong><br />
-          0727426795<br />
-          <a href="https://wa.me/254727426795" style="color:#ff9ff3; font-size:12px;">Tap here to chat on WhatsApp</a>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <strong>WhatsApp & Calls</strong><br />
+              0727 426 795<br />
+              <a href="https://wa.me/254727426795" style="color:#ff9ff3; font-size:13px; display:inline-block; margin-top:5px;">
+                <i class="fab fa-whatsapp"></i> Tap here to chat on WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Exact Location</strong><br />
+              Juakali Area, Near Marvels Plaza<br>
+              Eldoret, Kenya
+              <p style="font-size:12px; margin-top:6px; color:#feca57;">
+                📍 Landmark: Next to Marvels Plaza, Juakali stage
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">💄</div>
+            <div>
+              <strong>Perfect for</strong><br />
+              Everyday glam, graduations, photoshoots, dates, weddings, and "just because" self‑care days.
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">⭐</div>
+            <div>
+              <strong>Why Choose Us</strong><br />
+              Professional service, hygiene-focused, latest trends, friendly atmosphere, and affordable luxury.
+            </div>
+          </div>
+        </div>
+
+        <div class="hours-card">
+          <h3 style="font-size:18px; margin-bottom:15px; color:#ff9ff3;">Working Hours</h3>
+          <div class="hours-list">
+            <div><span>Monday – Friday</span><span>9:00 am – 7:00 pm</span></div>
+            <div><span>Saturday</span><span>9:00 am – 6:00 pm</span></div>
+            <div><span>Sunday & Holidays</span><span>On appointment</span></div>
+          </div>
+
+          <h4 style="margin-top:20px; margin-bottom:10px; font-size:15px;">Find Us on Google Maps</h4>
+          <div class="map-frame">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.613518999242!2d35.27528367428941!3d0.5142251996674993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178101a0d4e5e6b3%3A0xc6b0eeb38c209b05!2sMarvels%20Plaza%2C%20Eldoret!5e0!3m2!1sen!2ske!4v1746780112709!5m2!1sen!2ske"
+              width="100%"
+              height="220"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Moon Classy Salon Location - Juakali near Marvels Plaza, Eldoret">
+            </iframe>
+          </div>
+
+          <div style="margin-top:15px; font-size:12px; color:#dfe4ea;">
+            <i class="fas fa-info-circle"></i> Free parking available • Walk-ins welcome • Wheelchair accessible
+          </div>
         </div>
       </div>
+    </section>
+  </main>
 
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <div>
-          <strong>Exact Location</strong><br />
-          Juakali Area, Near Marvels Plaza<br>
-          Eldoret, Kenya
-          <p style="font-size:11px; margin-top:4px; color:#feca57;">
-            📍 Landmark: Next to Marvels Plaza, Juakali stage
-          </p>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-icon">💄</div>
-        <div>
-          <strong>Perfect for</strong><br />
-          Everyday glam, graduations, photoshoots, dates, weddings, and "just because" self‑care days.
-        </div>
-      </div>
-    </div>
-
-    <div class="hours-card">
-      <h3 style="font-size:16px; margin-bottom:8px;">Working Hours</h3>
-      <div class="hours-list">
-        <div><span>Monday – Saturday</span><span>9:00 am – 7:00 pm</span></div>
-        <div><span>Sunday & Holidays</span><span>On appointment</span></div>
-      </div>
-
-      <div class="map-frame">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.613518999242!2d35.27528367428941!3d0.5142251996674993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178101a0d4e5e6b3%3A0xc6b0eeb38c209b05!2sMarvels%20Plaza%2C%20Eldoret!5e0!3m2!1sen!2ske!4v1746780112709!5m2!1sen!2ske"
-          width="100%"
-          height="220"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Moon Classy Salon Location - Juakali near Marvels Plaza, Eldoret">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
-    
   <footer>
     © <span>Moon Classy Salon</span> – Juakali, near Marvels, Eldoret. All glam, all the time.
+    <div style="margin-top:8px; font-size:11px; opacity:0.8;">
+      Follow us on social media for updates and promotions
+    </div>
   </footer>
 
   <!-- Lightbox -->
@@ -1073,8 +1664,87 @@
     </div>
   </div>
 
+  <!-- Booking Modal -->
+  <div class="booking-modal" id="bookingModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <h2 class="modal-title">Book Your Appointment</h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" class="form-control" required placeholder="Your full name">
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" class="form-control" required placeholder="0727 426 795">
+        </div>
+        
+        <div class="form-group">
+          <label for="service">Service Required *</label>
+          <select id="service" class="form-control" required>
+            <option value="">Select a service</option>
+            <option value="Nails">Nails – Gel, Tips & Acrylics</option>
+            <option value="Manicure/Pedicure">Hand & Foot Care</option>
+            <option value="Facials">Facials & Spa Treats</option>
+            <option value="Makeup">Makeup & Brows</option>
+            <option value="Hair">Hair Styling & Braids</option>
+            <option value="Other">Other Beauty Services</option>
+            <option value="Package">Beauty Package</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="date">Preferred Date *</label>
+          <input type="date" id="date" class="form-control" required min="<?php echo date('Y-m-d'); ?>">
+        </div>
+        
+        <div class="form-group">
+          <label for="time">Preferred Time *</label>
+          <select id="time" class="form-control" required>
+            <option value="">Select time</option>
+            <option value="9:00">9:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="13:00">1:00 PM</option>
+            <option value="14:00">2:00 PM</option>
+            <option value="15:00">3:00 PM</option>
+            <option value="16:00">4:00 PM</option>
+            <option value="17:00">5:00 PM</option>
+            <option value="18:00">6:00 PM</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Additional Notes (Optional)</label>
+          <textarea id="message" class="form-control" placeholder="Any special requests or details..."></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          <i class="far fa-calendar-check"></i> Book Now
+        </button>
+        
+        <p style="margin-top:15px; font-size:12px; text-align:center; color:#dfe4ea;">
+          You'll receive a confirmation via WhatsApp within 30 minutes.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/254727426795?text=Hi%20Moon%20Classy%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span>Book Now</span>
+  </a>
+
   <!-- Back to Top Button -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <!-- JavaScript -->
   <script>
@@ -1106,6 +1776,35 @@
 
     // Start typing after slight delay
     setTimeout(typeLoop, 600);
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      menuToggle.innerHTML = mainNav.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('#mainNav a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    // Header scroll effect
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('nav-scrolled');
+      } else {
+        header.classList.remove('nav-scrolled');
+      }
+    });
 
     // Lightbox functionality
     const lightbox = document.getElementById('lightbox');
@@ -1156,12 +1855,180 @@
 
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Close mobile menu if open
+      mainNav.classList.remove('active');
+      menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
     });
 
-    // Add video API script
-    const script = document.createElement('script');
-    script.src = 'https://player.vimeo.com/api/player.js';
-    document.body.appendChild(script);
+    // Booking Modal
+    const bookingModal = document.getElementById('bookingModal');
+    const closeModal = document.getElementById('closeModal');
+    const bookNowBtn = document.getElementById('bookNowBtn');
+    const bookingForm = document.getElementById('bookingForm');
+    const packageBtns = document.querySelectorAll('.package-btn');
+    const toast = document.getElementById('toast');
+
+    // Open modal
+    bookNowBtn.addEventListener('click', () => {
+      bookingModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    // Package buttons
+    packageBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const packageName = btn.getAttribute('data-package');
+        bookingModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Set package in form
+        setTimeout(() => {
+          document.getElementById('service').value = 'Package';
+          document.getElementById('message').value = `Interested in: ${packageName}`;
+        }, 100);
+      });
+    });
+
+    // Close modal
+    closeModal.addEventListener('click', () => {
+      bookingModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+
+    bookingModal.addEventListener('click', (e) => {
+      if (e.target === bookingModal) {
+        bookingModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Form submission
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const message = document.getElementById('message').value;
+      
+      // Format date
+      const formattedDate = new Date(date).toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      
+      // Create WhatsApp message
+      const whatsappMessage = `Hi Moon Classy Salon!%0A%0A` +
+        `I'd like to book an appointment:%0A` +
+        `Name: ${name}%0A` +
+        `Phone: ${phone}%0A` +
+        `Service: ${service}%0A` +
+        `Date: ${formattedDate}%0A` +
+        `Time: ${time}:00%0A` +
+        `Notes: ${message || 'None'}`;
+      
+      // Close modal
+      bookingModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      
+      // Show success toast
+      showToast('Booking details copied to WhatsApp! Redirecting...');
+      
+      // Open WhatsApp after delay
+      setTimeout(() => {
+        window.open(`https://wa.me/254727426795?text=${whatsappMessage}`, '_blank');
+      }, 1500);
+      
+      // Reset form
+      bookingForm.reset();
+    });
+
+    // Toast notification function
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Set min date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').setAttribute('min', today);
+
+    // Lazy load images
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.classList.remove('loading');
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+
+      images.forEach((img) => {
+        img.classList.add('loading');
+        imageObserver.observe(img);
+      });
+    }
+
+    // Add Vimeo player script dynamically
+    if (!document.querySelector('script[src="https://player.vimeo.com/api/player.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://player.vimeo.com/api/player.js';
+      document.body.appendChild(script);
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Add active class to current section in nav
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('#mainNav a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (scrollY >= (sectionTop - 150)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
   </script>
 </body>
   </html>
