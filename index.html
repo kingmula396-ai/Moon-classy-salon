@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Moon Classy Salon | Eldoret | Nails, Hair, Spa & Beauty</title>
+  <title>Moon Classy Salon | Eldoret | Beauty, Nails, Hair & Spa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Moon Classy Salon in Eldoret offers nails, hair, spa, makeup, and beauty services. Book your glam session today.">
-  <meta name="keywords" content="salon, Eldoret, beauty, nails, hair, spa, makeup, braids, juakali">
+  <meta name="description" content="Moon Classy Salon in Eldoret offers nails, hair, spa, makeup, facial scrubbing, dreadlocks, and beauty services. Book your glam session today.">
+  <meta name="keywords" content="salon, Eldoret, beauty, nails, hair, spa, makeup, braids, juakali, facial, dreadlocks, hairstyles">
   <meta property="og:title" content="Moon Classy Salon | Eldoret">
   <meta property="og:image" content="https://i.postimg.cc/vm9dgTf6/00398b4b5ea78f645851dc3e1b968854.jpg">
   <meta name="theme-color" content="#4b2c82">
@@ -438,6 +438,151 @@
       opacity: 0.9;
     }
 
+    /* Gallery Slideshows */
+    .gallery-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .slideshow {
+      display: flex;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      height: 500px;
+    }
+
+    @media (max-width: 768px) {
+      .slideshow {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slideshow {
+        height: 300px;
+      }
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(5, 8, 22, 0.9), transparent);
+      padding: 30px;
+      color: white;
+    }
+
+    .slide-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #ff9ff3;
+    }
+
+    .slide-desc {
+      font-size: 14px;
+      opacity: 0.9;
+      max-width: 500px;
+    }
+
+    /* Slideshow Navigation */
+    .slideshow-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 10;
+    }
+
+    .slide-btn {
+      background: rgba(5, 8, 22, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .slide-btn:hover {
+      background: rgba(255, 159, 243, 0.7);
+      transform: scale(1.1);
+    }
+
+    .slideshow-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background: #ff9ff3;
+      transform: scale(1.2);
+    }
+
+    .gallery-stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 25px;
+      font-size: 13px;
+      color: #dfe4ea;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stat-item i {
+      color: #feca57;
+      font-size: 16px;
+    }
+
     /* Services */
     .services-grid {
       display: grid;
@@ -528,283 +673,78 @@
       font-weight: 600;
     }
 
-    /* Packages Section */
-    .packages-grid {
+    /* Testimonials */
+    .testimonials-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
       margin-top: 30px;
     }
 
-    .package-card {
+    .testimonial-card {
       padding: 25px;
       border-radius: 20px;
-      background: linear-gradient(145deg, rgba(75, 44, 130, 0.2), rgba(5, 8, 22, 0.9));
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
+      background: rgba(5, 8, 22, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
       position: relative;
       overflow: hidden;
-      transition: all 0.4s ease;
     }
 
-    .package-card.featured {
-      border: 2px solid #feca57;
-      transform: scale(1.03);
-    }
-
-    .package-card.featured:before {
-      content: "POPULAR";
+    .testimonial-card::before {
+      content: "❝";
       position: absolute;
       top: 15px;
-      right: -30px;
-      background: #feca57;
-      color: #050816;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 35px;
-      transform: rotate(45deg);
-      width: 120px;
-      text-align: center;
+      right: 20px;
+      font-size: 60px;
+      color: rgba(255, 159, 243, 0.2);
+      font-family: serif;
+      line-height: 1;
     }
 
-    .package-title {
-      font-size: 18px;
+    .testimonial-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #dfe4ea;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff9ff3, #feca57);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: 700;
-      margin-bottom: 10px;
+      color: #050816;
+      font-size: 20px;
+    }
+
+    .author-info h4 {
+      font-size: 15px;
+      margin-bottom: 4px;
       color: #ff9ff3;
     }
 
-    .package-price {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 15px;
+    .author-info p {
+      font-size: 12px;
+      color: #dfe4ea;
+      opacity: 0.8;
+    }
+
+    .testimonial-rating {
       color: #feca57;
-    }
-
-    .package-price span {
+      margin-top: 5px;
       font-size: 13px;
-      font-weight: 400;
-      color: #dfe4ea;
-    }
-
-    .package-desc {
-      font-size: 13px;
-      line-height: 1.6;
-      color: #dfe4ea;
-      margin-bottom: 20px;
-    }
-
-    .package-features {
-      list-style: none;
-      margin-bottom: 20px;
-    }
-
-    .package-features li {
-      padding: 6px 0;
-      padding-left: 24px;
-      position: relative;
-      font-size: 13px;
-    }
-
-    .package-features li:before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #1dd1a1;
-      font-weight: bold;
-    }
-
-    .package-btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      text-align: center;
-      background: linear-gradient(135deg, #ff9ff3, #feca57);
-      color: #050816;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 14px;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
-
-    .package-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Video Showcase */
-    .video-showcase-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .video-card {
-      background: rgba(5, 8, 22, 0.85);
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .video-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
-    }
-
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%; /* 16:9 Aspect Ratio */
-      background: #000;
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .video-info {
-      padding: 20px;
-    }
-
-    .video-title {
-      color: #feca57;
-      font-size: 16px;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .video-desc {
-      font-size: 13px;
-      color: #dfe4ea;
-      line-height: 1.5;
-    }
-
-    /* Gallery */
-    .gallery-grid {
-      margin-top: 30px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-    }
-
-    .gallery-item {
-      position: relative;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      background: rgba(0, 0, 0, 0.5);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
-      transform: translateY(0);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      cursor: pointer;
-      aspect-ratio: 1;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.08);
-    }
-
-    .gallery-item::after {
-      content: "View Full Size";
-      position: absolute;
-      inset: auto 10px 10px 10px;
-      font-size: 11px;
-      background: linear-gradient(to right, rgba(5, 8, 22, 0.9), rgba(75, 44, 130, 0.9));
-      padding: 8px 12px;
-      border-radius: 999px;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(12px);
-      transition: all 0.25s ease;
-      z-index: 1;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8);
-    }
-
-    .gallery-item:hover::after {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(5, 8, 22, 0.98);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    .lightbox.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .lightbox-content {
-      max-width: 90%;
-      max-height: 90%;
-      position: relative;
-    }
-
-    .lightbox-img {
-      max-width: 100%;
-      max-height: 80vh;
-      border-radius: 12px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: -50px;
-      right: 0;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 22px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .lightbox-close:hover {
-      background: rgba(255, 159, 243, 0.5);
-      transform: rotate(90deg);
     }
 
     /* Contact / Location */
@@ -991,12 +931,8 @@
         gap: 8px;
       }
 
-      .video-showcase-grid {
+      .testimonials-grid {
         grid-template-columns: 1fr;
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       }
     }
 
@@ -1015,12 +951,8 @@
         font-size: 12px;
       }
 
-      .services-grid, .packages-grid {
+      .services-grid {
         grid-template-columns: 1fr;
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -1069,151 +1001,64 @@
       transform: translateY(0);
     }
 
-    /* Booking Modal */
-    .booking-modal {
+    /* Lightbox */
+    .lightbox {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(5, 8, 22, 0.95);
-      z-index: 1001;
+      background: rgba(5, 8, 22, 0.98);
+      z-index: 1000;
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3s ease;
-      padding: 20px;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      backdrop-filter: blur(10px);
     }
 
-    .booking-modal.active {
+    .lightbox.active {
       opacity: 1;
       visibility: visible;
     }
 
-    .modal-content {
-      background: linear-gradient(145deg, rgba(5, 8, 22, 0.95), rgba(75, 44, 130, 0.9));
-      border-radius: 24px;
-      padding: 30px;
-      max-width: 500px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
       position: relative;
     }
 
-    .modal-close {
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .lightbox-close {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      background: transparent;
-      border: none;
+      top: -50px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       color: white;
-      font-size: 24px;
-      cursor: pointer;
       width: 40px;
       height: 40px;
       border-radius: 50%;
+      font-size: 22px;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease;
     }
 
-    .modal-close:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .modal-title {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #ff9ff3;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: rgba(255, 255, 255, 0.05);
-      color: white;
-      font-size: 14px;
-      transition: all 0.3s ease;
-    }
-
-    .form-control:focus {
-      outline: none;
-      border-color: #ff9ff3;
-      box-shadow: 0 0 0 2px rgba(255, 159, 243, 0.2);
-    }
-
-    select.form-control {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      background-size: 16px;
-    }
-
-    textarea.form-control {
-      min-height: 100px;
-      resize: vertical;
-    }
-
-    .submit-btn {
-      width: 100%;
-      padding: 14px;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, #ff9ff3, #feca57);
-      color: #050816;
-      font-weight: 700;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 10px;
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Toast Notification */
-    .toast {
-      position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: linear-gradient(135deg, #1dd1a1, #10ac84);
-      color: white;
-      padding: 16px 24px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      z-index: 1002;
-      opacity: 0;
-      transition: all 0.5s ease;
-      max-width: 90%;
-      text-align: center;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
+    .lightbox-close:hover {
+      background: rgba(255, 159, 243, 0.5);
+      transform: rotate(90deg);
     }
   </style>
 </head>
@@ -1235,10 +1080,12 @@
       <nav>
         <ul id="mainNav">
           <li><a href="#home">Home</a></li>
+          <li><a href="#nails">Nails</a></li>
+          <li><a href="#dreadlocks">Dreadlocks</a></li>
+          <li><a href="#facial">Facial</a></li>
+          <li><a href="#hairstyles">Hairstyles</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#packages">Packages</a></li>
-          <li><a href="#video-showcase">Videos</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
           <li><a href="#contact">Location</a></li>
           <li>
             <a href="https://wa.me/254727426795" class="cta-nav">
@@ -1265,17 +1112,17 @@
         <div class="hero-tags">
           <div class="pill">Luxury spa & facials</div>
           <div class="pill">Nails, tips & gels</div>
-          <div class="pill">Braids & weave styling</div>
+          <div class="pill">Dreadlocks & braids</div>
           <div class="pill">Makeup & micro-blading</div>
           <div class="pill">Walk-ins welcome</div>
         </div>
         <div class="hero-actions">
-          <button class="btn-main" id="bookNowBtn">
-            <i class="far fa-calendar-check"></i> Book Appointment
+          <a href="https://wa.me/254727426795?text=Hi%20Moon%20Classy%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment" class="btn-main">
+            <i class="fab fa-whatsapp"></i> Book on WhatsApp
             <span>➜</span>
-          </button>
-          <a href="https://wa.me/254727426795?text=Hi%20Moon%20Classy%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment" class="btn-outline">
-            <i class="fab fa-whatsapp"></i> Quick WhatsApp
+          </a>
+          <a href="#services" class="btn-outline">
+            <i class="fas fa-spa"></i> View Services
           </a>
         </div>
       </div>
@@ -1298,6 +1145,206 @@
           <div class="floating-badge-inner">
             Nail • Hair • Spa
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NAILS GALLERY -->
+    <section class="gallery-section" id="nails">
+      <h2 class="section-title">
+        <i class="fas fa-gem"></i> Nail Art Gallery
+        <span>Stunning Designs & Precision</span>
+      </h2>
+      <p class="section-sub">
+        Browse our collection of exquisite nail designs - from elegant gel polish to intricate nail art with gems and charms.
+      </p>
+
+      <div class="slideshow-container" id="nailsSlideshow">
+        <div class="slideshow" id="nailsSlides">
+          <!-- Slides will be inserted by JavaScript -->
+        </div>
+        
+        <div class="slideshow-nav">
+          <button class="slide-btn prev-btn" data-slideshow="nails">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="slide-btn next-btn" data-slideshow="nails">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        
+        <div class="slide-overlay">
+          <h3 class="slide-title">Elegant Nail Designs</h3>
+          <p class="slide-desc">Professional nail art with gel polish, acrylics, tips, and beautiful decorations.</p>
+        </div>
+      </div>
+      
+      <div class="slideshow-dots" id="nailsDots">
+        <!-- Dots will be inserted by JavaScript -->
+      </div>
+      
+      <div class="gallery-stats">
+        <div class="stat-item">
+          <i class="fas fa-clock"></i>
+          <span>Lasts 2-3 weeks</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-palette"></i>
+          <span>100+ Colors Available</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-gem"></i>
+          <span>Gems & Charms Included</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DREADLOCKS GALLERY -->
+    <section class="gallery-section" id="dreadlocks">
+      <h2 class="section-title">
+        <i class="fas fa-cut"></i> Dreadlocks Styling
+        <span>Professional Care & Maintenance</span>
+      </h2>
+      <p class="section-sub">
+        Expert dreadlock installation, retwisting, maintenance, and styling for a neat, comfortable, and fashionable look.
+      </p>
+
+      <div class="slideshow-container" id="dreadlocksSlideshow">
+        <div class="slideshow" id="dreadlocksSlides">
+          <!-- Slides will be inserted by JavaScript -->
+        </div>
+        
+        <div class="slideshow-nav">
+          <button class="slide-btn prev-btn" data-slideshow="dreadlocks">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="slide-btn next-btn" data-slideshow="dreadlocks">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        
+        <div class="slide-overlay">
+          <h3 class="slide-title">Beautiful Dreadlocks</h3>
+          <p class="slide-desc">Professional installation, retwisting, and styling for all hair types.</p>
+        </div>
+      </div>
+      
+      <div class="slideshow-dots" id="dreadlocksDots">
+        <!-- Dots will be inserted by JavaScript -->
+      </div>
+      
+      <div class="gallery-stats">
+        <div class="stat-item">
+          <i class="fas fa-user-check"></i>
+          <span>Expert Installation</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-spa"></i>
+          <span>Gentle Maintenance</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-crown"></i>
+          <span>Stylish Finishes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FACIAL SCRUBBING GALLERY -->
+    <section class="gallery-section" id="facial">
+      <h2 class="section-title">
+        <i class="fas fa-spa"></i> Facial Scrubbing & Care
+        <span>Refresh & Rejuvenate Your Skin</span>
+      </h2>
+      <p class="section-sub">
+        Experience deep cleansing facial treatments that remove impurities, exfoliate dead skin, and restore your natural glow.
+      </p>
+
+      <div class="slideshow-container" id="facialSlideshow">
+        <div class="slideshow" id="facialSlides">
+          <!-- Slides will be inserted by JavaScript -->
+        </div>
+        
+        <div class="slideshow-nav">
+          <button class="slide-btn prev-btn" data-slideshow="facial">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="slide-btn next-btn" data-slideshow="facial">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        
+        <div class="slide-overlay">
+          <h3 class="slide-title">Professional Facial Care</h3>
+          <p class="slide-desc">Deep cleansing, exfoliation, and hydration treatments for glowing skin.</p>
+        </div>
+      </div>
+      
+      <div class="slideshow-dots" id="facialDots">
+        <!-- Dots will be inserted by JavaScript -->
+      </div>
+      
+      <div class="gallery-stats">
+        <div class="stat-item">
+          <i class="fas fa-leaf"></i>
+          <span>Natural Products</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-hand-sparkles"></i>
+          <span>Deep Cleansing</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-star"></i>
+          <span>Instant Glow</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WOMEN HAIRSTYLES GALLERY -->
+    <section class="gallery-section" id="hairstyles">
+      <h2 class="section-title">
+        <i class="fas fa-female"></i> Women Hairstyles
+        <span>Trendy & Elegant Looks</span>
+      </h2>
+      <p class="section-sub">
+        From everyday styles to special occasion looks, we create beautiful hairstyles that complement your personality and lifestyle.
+      </p>
+
+      <div class="slideshow-container" id="hairstylesSlideshow">
+        <div class="slideshow" id="hairstylesSlides">
+          <!-- Slides will be inserted by JavaScript -->
+        </div>
+        
+        <div class="slideshow-nav">
+          <button class="slide-btn prev-btn" data-slideshow="hairstyles">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="slide-btn next-btn" data-slideshow="hairstyles">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        
+        <div class="slide-overlay">
+          <h3 class="slide-title">Beautiful Hairstyles</h3>
+          <p class="slide-desc">Trendy, elegant, and stylish looks for every occasion.</p>
+        </div>
+      </div>
+      
+      <div class="slideshow-dots" id="hairstylesDots">
+        <!-- Dots will be inserted by JavaScript -->
+      </div>
+      
+      <div class="gallery-stats">
+        <div class="stat-item">
+          <i class="fas fa-calendar-alt"></i>
+          <span>For All Occasions</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-heart"></i>
+          <span>Personalized Styling</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-clock"></i>
+          <span>Long-lasting Results</span>
         </div>
       </div>
     </section>
@@ -1327,29 +1374,42 @@
         </div>
 
         <div class="service-card">
-          <div class="service-title"><i class="fas fa-hand-sparkles"></i> Hand & Foot Care</div>
+          <div class="service-title"><i class="fas fa-cut"></i> Dreadlocks & Braids</div>
           <p class="service-desc">
-            Pampering sessions that leave your hands and feet soft, hydrated and picture‑ready, finished with your favourite polish.
+            Professional dreadlock installation, retwisting, maintenance and stylish braiding for a neat, comfortable look.
           </p>
           <ul class="service-list">
-            <li>Classic & spa manicure</li>
-            <li>Classic & spa pedicure</li>
-            <li>Cuticle care & foot scrubs</li>
+            <li>Dreadlock installation & retwisting</li>
+            <li>Cornrows, lines & stitch braids</li>
+            <li>Crochet braids & loc styling</li>
           </ul>
-          <div class="service-price">From KES 700</div>
+          <div class="service-price">From KES 1,500</div>
         </div>
 
         <div class="service-card">
-          <div class="service-title"><i class="fas fa-spa"></i> Facials & Spa Treats</div>
+          <div class="service-title"><i class="fas fa-spa"></i> Facial Scrubbing & Care</div>
           <p class="service-desc">
             Deep cleansing and glow‑boosting facial treatments designed to refresh tired skin and restore a healthy, luminous look.
           </p>
           <ul class="service-list">
-            <li>Hydrating & deep‑clean facials</li>
-            <li>Relaxing spa experiences</li>
-            <li>Gentle exfoliation & masks</li>
+            <li>Deep cleansing facial scrubs</li>
+            <li>Exfoliation & blackhead removal</li>
+            <li>Hydration & glow treatments</li>
           </ul>
           <div class="service-price">From KES 1,200</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-title"><i class="fas fa-female"></i> Women Hairstyling</div>
+          <p class="service-desc">
+            From elegant everyday styles to special occasion looks, we create beautiful hairstyles that complement your personality.
+          </p>
+          <ul class="service-list">
+            <li>Blowouts & styling</li>
+            <li>Special occasion hairstyles</li>
+            <li>Hair treatments & care</li>
+          </ul>
+          <div class="service-price">From KES 1,000</div>
         </div>
 
         <div class="service-card">
@@ -1363,19 +1423,6 @@
             <li>Semi‑permanent micro‑blading</li>
           </ul>
           <div class="service-price">From KES 1,500</div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-title"><i class="fas fa-cut"></i> Hair Styling & Braids</div>
-          <p class="service-desc">
-            Trendy protective styles and classic looks that are neat, stylish and comfortable for everyday wear or special events.
-          </p>
-          <ul class="service-list">
-            <li>Cornrows, lines & stitch braids</li>
-            <li>Twists, crotchet & loc styling</li>
-            <li>Wig installation & treatment</li>
-          </ul>
-          <div class="service-price">From KES 1,000</div>
         </div>
 
         <div class="service-card">
@@ -1393,174 +1440,57 @@
       </div>
     </section>
 
-    <!-- PACKAGES -->
-    <section id="packages">
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
       <h2 class="section-title">
-        <i class="fas fa-gift"></i> Beauty Packages
-        <span>Save with our deals</span>
+        <i class="fas fa-comment-alt"></i> Client Testimonials
+        <span>What Our Clients Say</span>
       </h2>
       <p class="section-sub">
-        Treat yourself to a complete beauty experience with our curated packages designed for different occasions and needs.
+        Don't just take our word for it - hear from our satisfied clients who have experienced the Moon Classy difference.
       </p>
 
-      <div class="packages-grid">
-        <div class="package-card">
-          <h3 class="package-title">Glam & Go</h3>
-          <div class="package-price">KES 2,500 <span>/ session</span></div>
-          <p class="package-desc">
-            Perfect for a quick refresh or special occasion look.
-          </p>
-          <ul class="package-features">
-            <li>Basic Manicure & Pedicure</li>
-            <li>Simple Nail Art</li>
-            <li>Eyebrow Shaping</li>
-            <li>Light Makeup Application</li>
-          </ul>
-          <button class="package-btn" data-package="Glam & Go">Book This Package</button>
-        </div>
-
-        <div class="package-card featured">
-          <h3 class="package-title">Bridal Bliss</h3>
-          <div class="package-price">KES 8,000 <span>/ full day</span></div>
-          <p class="package-desc">
-            Everything you need to look stunning on your special day.
-          </p>
-          <ul class="package-features">
-            <li>Full Bridal Makeup</li>
-            <li>Spa Manicure & Pedicure</li>
-            <li>Hair Styling</li>
-            <li>Touch-ups Throughout Day</li>
-            <li>Pre-wedding Consultation</li>
-          </ul>
-          <button class="package-btn" data-package="Bridal Bliss">Book This Package</button>
-        </div>
-
-        <div class="package-card">
-          <h3 class="package-title">Monthly Glow-Up</h3>
-          <div class="package-price">KES 5,000 <span>/ month</span></div>
-          <p class="package-desc">
-            Regular maintenance for consistent, beautiful results.
-          </p>
-          <ul class="package-features">
-            <li>2x Manicure & Pedicure</li>
-            <li>1x Facial Treatment</li>
-            <li>Eyebrow Maintenance</li>
-            <li>10% Off Additional Services</li>
-          </ul>
-          <button class="package-btn" data-package="Monthly Glow-Up">Book This Package</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- VIDEO SHOWCASE -->
-    <section id="video-showcase">
-      <h2 class="section-title">
-        <i class="fas fa-play-circle"></i> Nail Art Videos
-        <span>Watch the Magic Happen</span>
-      </h2>
-      <p class="section-sub">
-        See the precision, sparkle, and artistry behind our most popular nail designs in motion. Get inspired for your next visit!
-      </p>
-
-      <div class="video-showcase-grid">
-        <!-- Video 1: Starlit Sparkle Nails -->
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe 
-              src="https://player.vimeo.com/video/1151862502?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;background=1&amp;muted=1&amp;autoplay=1" 
-              frameborder="0" 
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" 
-              title="Starlit Sparkle Nails - Moon Classy Salon"
-              loading="lazy"
-              allowfullscreen>
-            </iframe>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "I've been getting my nails done at Moon Classy for over a year now. The attention to detail is amazing! My gel nails last 3+ weeks without chipping. Highly recommend!"
           </div>
-          <div class="video-info">
-            <h3 class="video-title">Starlit Sparkle Nails</h3>
-            <p class="video-desc">Mesmerizing square press-ons with glitter and rhinestone details for a dazzling finish.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div class="author-info">
+              <h4>Sarah W.</h4>
+              <p>Regular Client</p>
+              <div class="testimonial-rating">★★★★★</div>
+            </div>
           </div>
         </div>
 
-        <!-- Video 2: Chic Gel Nail Art -->
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe 
-              src="https://player.vimeo.com/video/1151862400?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;background=1&amp;muted=1&amp;autoplay=1" 
-              frameborder="0" 
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" 
-              title="Chic Gel Nail Art - Moon Classy Salon"
-              loading="lazy"
-              allowfullscreen>
-            </iframe>
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "Best facial in Eldoret! My skin felt reborn after the deep cleansing treatment. The staff is professional and the environment is so relaxing. Will definitely be back!"
           </div>
-          <div class="video-info">
-            <h3 class="video-title">Chic Gel Nail Art</h3>
-            <p class="video-desc">Elegant gel nail designs and art, showcasing clean lines and modern patterns.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div class="author-info">
+              <h4>Mercy K.</h4>
+              <p>First Time Client</p>
+              <div class="testimonial-rating">★★★★★</div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- GALLERY -->
-    <section id="gallery">
-      <h2 class="section-title">
-        <i class="fas fa-images"></i> Live Gallery
-        <span>Real looks. Real glam.</span>
-      </h2>
-      <p class="section-sub">
-        A peek at some of the fresh nails, stunning braids, soft glam makeup and detailed brow work created at Moon Classy Salon.
-      </p>
-
-      <div class="gallery-grid">
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/3xkhhnwj/0589129e55046567f4fe415b9bab24a3.jpg" alt="Nail art 1" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/Zq3hBnpT/0ad2ad5b12330ed55155db96a7e3d821.jpg" alt="Nail art 2" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/8zxSzMFY/0e06bf40deeee71bd242805d3e5ada04.jpg" alt="Nail art 3" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/BvDGLbHJ/1722fc33577703ec583549dc8ccde82d.jpg" alt="Nail art 4" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/NMcv1tkj/1a392c1317951cf8d436baca35476011.jpg" alt="Lashes / brows 1" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/x1B21MJY/3a1ae070c0ddfc50abc5b66fb5850afc.jpg" alt="Lashes / brows 2" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/TPmXL1mz/3d706c2fbc27ff3ce218877050cce9b1.jpg" alt="Braids 1" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/6QRN2qny/6dde437d6ca27ce365b24db1cf262609.jpg" alt="Braids 2" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/J468S9Mf/978fafe7e2822e58805444e03fa4f5ae.jpg" alt="Braids 3" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/0NmqMjDr/9f74d906a0675c9e7817c7114cca076c.jpg" alt="Braids 4" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/sgbrg7B9/b63dcc1012ba1691d4eb7e5baa586cef.jpg" alt="Braids 5" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/3xkhhnwX/bbc40727170ca2fa3e30ed8335443712.jpg" alt="Makeup 1" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/g0RPXjR1/d1be840aa995688e24f3d080716febe9.jpg" alt="Makeup 2" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/jSDTTZj7/db3dc3accdc2c71d5cdf9321feb12e9e.jpg" alt="Makeup 3" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/13bQ3wgW/ee5a6f4407bb830653de80f12f583a4d.jpg" alt="Nails closeup" loading="lazy">
-        </div>
-        <div class="gallery-item" onclick="openLightbox(this)">
-          <img src="https://i.postimg.cc/dVgYVr7X/f3f12b9b8fb4e6abe1d2367cd369b1ca.jpg" alt="Braids & style" loading="lazy">
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "Got my dreadlocks retwisted here and I'm so impressed! They listened to exactly what I wanted and the results are neat and comfortable. Reasonable prices too!"
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">J</div>
+            <div class="author-info">
+              <h4>James O.</h4>
+              <p>Dreadlocks Client</p>
+              <div class="testimonial-rating">★★★★★</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1664,77 +1594,6 @@
     </div>
   </div>
 
-  <!-- Booking Modal -->
-  <div class="booking-modal" id="bookingModal">
-    <div class="modal-content">
-      <button class="modal-close" id="closeModal">&times;</button>
-      <h2 class="modal-title">Book Your Appointment</h2>
-      <form id="bookingForm">
-        <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" class="form-control" required placeholder="Your full name">
-        </div>
-        
-        <div class="form-group">
-          <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" class="form-control" required placeholder="0727 426 795">
-        </div>
-        
-        <div class="form-group">
-          <label for="service">Service Required *</label>
-          <select id="service" class="form-control" required>
-            <option value="">Select a service</option>
-            <option value="Nails">Nails – Gel, Tips & Acrylics</option>
-            <option value="Manicure/Pedicure">Hand & Foot Care</option>
-            <option value="Facials">Facials & Spa Treats</option>
-            <option value="Makeup">Makeup & Brows</option>
-            <option value="Hair">Hair Styling & Braids</option>
-            <option value="Other">Other Beauty Services</option>
-            <option value="Package">Beauty Package</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="date">Preferred Date *</label>
-          <input type="date" id="date" class="form-control" required min="<?php echo date('Y-m-d'); ?>">
-        </div>
-        
-        <div class="form-group">
-          <label for="time">Preferred Time *</label>
-          <select id="time" class="form-control" required>
-            <option value="">Select time</option>
-            <option value="9:00">9:00 AM</option>
-            <option value="10:00">10:00 AM</option>
-            <option value="11:00">11:00 AM</option>
-            <option value="12:00">12:00 PM</option>
-            <option value="13:00">1:00 PM</option>
-            <option value="14:00">2:00 PM</option>
-            <option value="15:00">3:00 PM</option>
-            <option value="16:00">4:00 PM</option>
-            <option value="17:00">5:00 PM</option>
-            <option value="18:00">6:00 PM</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="message">Additional Notes (Optional)</label>
-          <textarea id="message" class="form-control" placeholder="Any special requests or details..."></textarea>
-        </div>
-        
-        <button type="submit" class="submit-btn">
-          <i class="far fa-calendar-check"></i> Book Now
-        </button>
-        
-        <p style="margin-top:15px; font-size:12px; text-align:center; color:#dfe4ea;">
-          You'll receive a confirmation via WhatsApp within 30 minutes.
-        </p>
-      </form>
-    </div>
-  </div>
-
-  <!-- Toast Notification -->
-  <div class="toast" id="toast"></div>
-
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/254727426795?text=Hi%20Moon%20Classy%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
@@ -1806,17 +1665,32 @@
       }
     });
 
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Close mobile menu if open
+      mainNav.classList.remove('active');
+      menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+
     // Lightbox functionality
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
     const closeBtn = document.getElementById('closeLightbox');
-    
-    const galleryItems = document.querySelectorAll('.gallery-item');
 
-    function openLightbox(element) {
-      const img = element.querySelector('img');
-      lightboxImage.src = img.src;
-      lightboxImage.alt = img.alt;
+    function openLightbox(imgSrc, altText) {
+      lightboxImage.src = imgSrc;
+      lightboxImage.alt = altText;
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
@@ -1842,151 +1716,242 @@
       if (e.key === 'Escape') closeLightbox();
     });
 
-    // Back to Top Button
-    const backToTopBtn = document.getElementById('backToTop');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
-        backToTopBtn.classList.add('visible');
-      } else {
-        backToTopBtn.classList.remove('visible');
+    // Slideshow Data
+    const slideshowData = {
+      nails: {
+        images: [
+          "https://i.postimg.cc/3xkhhnwj/0589129e55046567f4fe415b9bab24a3.jpg",
+          "https://i.postimg.cc/Zq3hBnpT/0ad2ad5b12330ed55155db96a7e3d821.jpg",
+          "https://i.postimg.cc/8zxSzMFY/0e06bf40deeee71bd242805d3e5ada04.jpg",
+          "https://i.postimg.cc/BvDGLbHJ/1722fc33577703ec583549dc8ccde82d.jpg",
+          "https://i.postimg.cc/13bQ3wgW/ee5a6f4407bb830653de80f12f583a4d.jpg"
+        ],
+        titles: [
+          "Elegant Gel Nails",
+          "Sparkle & Shine",
+          "Modern Nail Art",
+          "French Tip Perfection",
+          "Gemstone Accents"
+        ],
+        descriptions: [
+          "Classic gel polish with flawless finish",
+          "Glitter and rhinestone details",
+          "Contemporary designs for every style",
+          "Clean and sophisticated look",
+          "Beautiful decorations for special occasions"
+        ]
+      },
+      dreadlocks: {
+        images: [
+          "https://res.cloudinary.com/djalsiyxh/image/upload/v1767707810/veo1gbeds2x3wq7blj04.jpg",
+          "https://res.cloudinary.com/djalsiyxh/image/upload/v1767707811/wcomgrygpbwr1zbbpppa.jpg",
+          "https://res.cloudinary.com/djalsiyxh/image/upload/v1767707812/f4pvlgvtflpjdjnomaif.jpg",
+          "https://res.cloudinary.com/djalsiyxh/image/upload/v1767707813/jsegswrgdpz2pog0gmnc.jpg",
+          "https://res.cloudinary.com/djalsiyxh/image/upload/v1767707815/d75c1ypltbyxesjb305h.jpg",
+          "https://res.cloudinary.com/djalsiyxh/image/upload/v1767707818/dbys4humqsjb8as6a9n1.jpg",
+          "https://res.cloudinary.com/djalsiyxh/image/upload/v1767707817/u3sigfjvwdjqdeglrnnd.jpg"
+        ],
+        titles: [
+          "Professional Dreadlock Installation",
+          "Neat Retwisting",
+          "Maintenance & Care",
+          "Stylish Finishes",
+          "Comfortable & Durable",
+          "Expert Styling",
+          "Beautiful Results"
+        ],
+        descriptions: [
+          "Expert installation for all hair types",
+          "Clean and precise retwisting technique",
+          "Gentle maintenance for healthy locks",
+          "Elegant finishes for any occasion",
+          "Designed for comfort and longevity",
+          "Professional styling expertise",
+          "Consistently beautiful outcomes"
+        ]
+      },
+      facial: {
+        images: [
+          "https://i.postimg.cc/QtwFBnRm/253d8f292978764b5776e73bdee27f8c.jpg",
+          "https://i.postimg.cc/pT4m91gz/341df178c3275c9f0f547c1b5c45b99a.jpg",
+          "https://i.postimg.cc/NMSKyPW6/6aefecc3a2ab6bfd31866be8664f38a2.jpg",
+          "https://i.postimg.cc/pT4m91gD/832dcd34270d32b0cf18d45b527821be.jpg",
+          "https://i.postimg.cc/3RVkybPt/a5ab973e9b5c92ea7e1bfd69a90d9c8f.jpg",
+          "https://i.postimg.cc/3RVkybP9/d611fd94e37c71e407c1075f972e1ac0.jpg",
+          "https://i.postimg.cc/C1XRZ6WC/f03dba15ae6d2d810985793ed80dffaa.jpg"
+        ],
+        titles: [
+          "Deep Cleansing Facial",
+          "Exfoliation Treatment",
+          "Blackhead Removal",
+          "Skin Rejuvenation",
+          "Hydration Therapy",
+          "Glow Boost",
+          "Relaxing Facial Care"
+        ],
+        descriptions: [
+          "Removes impurities and excess oil",
+          "Gentle exfoliation for smooth skin",
+          "Professional extraction technique",
+          "Revitalizes tired, dull skin",
+          "Intense moisture for hydration",
+          "Enhances natural radiance",
+          "Pampering treatment for relaxation"
+        ]
+      },
+      hairstyles: {
+        images: [
+          "https://i.ibb.co/Q3w0wTns/ed2c0ee6ed503db95d1fe3609b154556.jpg",
+          "https://i.ibb.co/bgP2PgYC/4a351840e20f9115a72723c5c9b0b2e2.jpg",
+          "https://i.ibb.co/93YjQ03x/c0e36cf3b5e4f7fd285fb75776ea6e60.jpg",
+          "https://i.ibb.co/X1Bk8fP/9657539eabd3848d52a1d5b6145edeb5.jpg",
+          "https://i.ibb.co/XkVtF39Q/408bc63c8c6c69e5603a187220169566.jpg",
+          "https://i.ibb.co/TDg6ktGT/4f90ab216a188e712639e91b642a641e.jpg",
+          "https://i.ibb.co/D3M11Tq/2c1f28be455e78c71df7c2b5fe402ef8.jpg",
+          "https://i.ibb.co/W49Rwn0H/aa0a20180475da097aa5298bfcf45927.jpg",
+          "https://i.ibb.co/67s4FmNX/5da2f63ef578a936466ff1139667c623.jpg",
+          "https://i.ibb.co/r23S3k0f/f0da5b9a1f2a9589d9b2db77d9a137bf.jpg",
+          "https://i.ibb.co/b59nsPzy/05e8b4fc18ed0a9335e53d51c6d46a5e.jpg"
+        ],
+        titles: [
+          "Elegant Updo",
+          "Casual Waves",
+          "Professional Style",
+          "Wedding Hairstyle",
+          "Modern Bob",
+          "Evening Glam",
+          "Natural Curls",
+          "Braided Beauty",
+          "Sleek & Straight",
+          "Volume & Body",
+          "Special Occasion"
+        ],
+        descriptions: [
+          "Sophisticated updo for formal events",
+          "Relaxed waves for everyday wear",
+          "Polished look for the workplace",
+          "Bridal hairstyle with accessories",
+          "Contemporary short hairstyle",
+          "Glamorous look for nights out",
+          "Enhanced natural curl pattern",
+          "Intricate braiding techniques",
+          "Smooth, straight professional finish",
+          "Full-bodied style with volume",
+          "Perfect for celebrations and events"
+        ]
       }
-    });
+    };
 
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      // Close mobile menu if open
-      mainNav.classList.remove('active');
-      menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-    });
-
-    // Booking Modal
-    const bookingModal = document.getElementById('bookingModal');
-    const closeModal = document.getElementById('closeModal');
-    const bookNowBtn = document.getElementById('bookNowBtn');
-    const bookingForm = document.getElementById('bookingForm');
-    const packageBtns = document.querySelectorAll('.package-btn');
-    const toast = document.getElementById('toast');
-
-    // Open modal
-    bookNowBtn.addEventListener('click', () => {
-      bookingModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-
-    // Package buttons
-    packageBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const packageName = btn.getAttribute('data-package');
-        bookingModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+    // Initialize all slideshows
+    function initSlideshows() {
+      for (const [slideshowId, data] of Object.entries(slideshowData)) {
+        const slidesContainer = document.getElementById(`${slideshowId}Slides`);
+        const dotsContainer = document.getElementById(`${slideshowId}Dots`);
         
-        // Set package in form
-        setTimeout(() => {
-          document.getElementById('service').value = 'Package';
-          document.getElementById('message').value = `Interested in: ${packageName}`;
-        }, 100);
-      });
-    });
-
-    // Close modal
-    closeModal.addEventListener('click', () => {
-      bookingModal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    });
-
-    bookingModal.addEventListener('click', (e) => {
-      if (e.target === bookingModal) {
-        bookingModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
-    });
-
-    // Form submission
-    bookingForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      const service = document.getElementById('service').value;
-      const date = document.getElementById('date').value;
-      const time = document.getElementById('time').value;
-      const message = document.getElementById('message').value;
-      
-      // Format date
-      const formattedDate = new Date(date).toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-      
-      // Create WhatsApp message
-      const whatsappMessage = `Hi Moon Classy Salon!%0A%0A` +
-        `I'd like to book an appointment:%0A` +
-        `Name: ${name}%0A` +
-        `Phone: ${phone}%0A` +
-        `Service: ${service}%0A` +
-        `Date: ${formattedDate}%0A` +
-        `Time: ${time}:00%0A` +
-        `Notes: ${message || 'None'}`;
-      
-      // Close modal
-      bookingModal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-      
-      // Show success toast
-      showToast('Booking details copied to WhatsApp! Redirecting...');
-      
-      // Open WhatsApp after delay
-      setTimeout(() => {
-        window.open(`https://wa.me/254727426795?text=${whatsappMessage}`, '_blank');
-      }, 1500);
-      
-      // Reset form
-      bookingForm.reset();
-    });
-
-    // Toast notification function
-    function showToast(message) {
-      toast.textContent = message;
-      toast.classList.add('show');
-      
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3000);
-    }
-
-    // Set min date to today
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('date').setAttribute('min', today);
-
-    // Lazy load images
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    
-    if ('IntersectionObserver' in window) {
-      const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.classList.remove('loading');
-            imageObserver.unobserve(img);
-          }
+        // Create slides
+        data.images.forEach((imgSrc, index) => {
+          const slide = document.createElement('div');
+          slide.className = 'slide';
+          slide.innerHTML = `
+            <img src="${imgSrc}" alt="${data.titles[index]}" loading="lazy">
+          `;
+          slidesContainer.appendChild(slide);
+          
+          // Create dot
+          const dot = document.createElement('div');
+          dot.className = 'dot';
+          if (index === 0) dot.classList.add('active');
+          dot.dataset.index = index;
+          dot.addEventListener('click', () => goToSlide(slideshowId, index));
+          dotsContainer.appendChild(dot);
         });
-      });
-
-      images.forEach((img) => {
-        img.classList.add('loading');
-        imageObserver.observe(img);
-      });
+        
+        // Set up autoplay
+        startAutoplay(slideshowId);
+      }
     }
 
-    // Add Vimeo player script dynamically
-    if (!document.querySelector('script[src="https://player.vimeo.com/api/player.js"]')) {
-      const script = document.createElement('script');
-      script.src = 'https://player.vimeo.com/api/player.js';
-      document.body.appendChild(script);
+    // Slideshow navigation
+    let currentSlide = {
+      nails: 0,
+      dreadlocks: 0,
+      facial: 0,
+      hairstyles: 0
+    };
+
+    let autoplayIntervals = {};
+
+    function startAutoplay(slideshowId) {
+      // Clear any existing interval
+      if (autoplayIntervals[slideshowId]) {
+        clearInterval(autoplayIntervals[slideshowId]);
+      }
+      
+      // Start new interval
+      autoplayIntervals[slideshowId] = setInterval(() => {
+        goToSlide(slideshowId, (currentSlide[slideshowId] + 1) % slideshowData[slideshowId].images.length);
+      }, 4000);
     }
+
+    function goToSlide(slideshowId, slideIndex) {
+      const slides = document.querySelectorAll(`#${slideshowId}Slides .slide`);
+      const dots = document.querySelectorAll(`#${slideshowId}Dots .dot`);
+      const slidesContainer = document.getElementById(`${slideshowId}Slides`);
+      
+      if (slideIndex >= slides.length) slideIndex = 0;
+      if (slideIndex < 0) slideIndex = slides.length - 1;
+      
+      currentSlide[slideshowId] = slideIndex;
+      
+      // Update slides position
+      slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+      
+      // Update dots
+      dots.forEach((dot, index) => {
+        if (index === slideIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+      
+      // Update overlay text
+      const overlay = slidesContainer.parentElement.querySelector('.slide-overlay');
+      if (overlay) {
+        overlay.querySelector('.slide-title').textContent = slideshowData[slideshowId].titles[slideIndex];
+        overlay.querySelector('.slide-desc').textContent = slideshowData[slideshowId].descriptions[slideIndex];
+      }
+      
+      // Restart autoplay timer
+      startAutoplay(slideshowId);
+    }
+
+    // Set up navigation buttons
+    document.querySelectorAll('.slide-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const slideshowId = this.dataset.slideshow;
+        const direction = this.classList.contains('prev-btn') ? -1 : 1;
+        goToSlide(slideshowId, currentSlide[slideshowId] + direction);
+      });
+    });
+
+    // Pause autoplay on hover
+    document.querySelectorAll('.slideshow-container').forEach(container => {
+      container.addEventListener('mouseenter', function() {
+        const slideshowId = this.id.replace('Slideshow', '');
+        if (autoplayIntervals[slideshowId]) {
+          clearInterval(autoplayIntervals[slideshowId]);
+        }
+      });
+      
+      container.addEventListener('mouseleave', function() {
+        const slideshowId = this.id.replace('Slideshow', '');
+        startAutoplay(slideshowId);
+      });
+    });
+
+    // Initialize slideshows when page loads
+    document.addEventListener('DOMContentLoaded', initSlideshows);
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -2028,6 +1993,15 @@
           link.classList.add('active');
         }
       });
+    });
+
+    // Click on slide to open lightbox
+    document.addEventListener('click', function(e) {
+      if (e.target.matches('.slide img')) {
+        const imgSrc = e.target.src;
+        const altText = e.target.alt;
+        openLightbox(imgSrc, altText);
+      }
     });
   </script>
 </body>
