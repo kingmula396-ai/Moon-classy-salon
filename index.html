@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Moon Classy Salon | Eldoret</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Moon Classy Salon in Eldoret offers nails, hair, spa, makeup, and beauty services. Book your glam session today.">
+  <meta name="keywords" content="salon, Eldoret, beauty, nails, hair, spa, makeup, braids, juakali">
+  <meta property="og:title" content="Moon Classy Salon | Eldoret">
+  <meta property="og:image" content="https://i.postimg.cc/vm9dgTf6/00398b4b5ea78f645851dc3e1b968854.jpg">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #ff9ff3, #4b2c82, #050816);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Animated background */
+    .animated-bg {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 10% 20%, rgba(255, 0, 150, 0.25), transparent 55%),
+                  radial-gradient(circle at 80% 0%, rgba(0, 200, 255, 0.25), transparent 55%),
+                  radial-gradient(circle at 0% 80%, rgba(255, 255, 0, 0.18), transparent 55%);
+      opacity: 0.9;
+      z-index: -2;
+      animation: moveGlow 18s infinite alternate ease-in-out;
+    }
+
+    @keyframes moveGlow {
+      0% { transform: translate3d(0, 0, 0) scale(1); filter: blur(0px); }
+      50% { transform: translate3d(-40px, 20px, 0) scale(1.1); filter: blur(1px); }
+      100% { transform: translate3d(40px, -30px, 0) scale(1.05); filter: blur(0px); }
+    }
+
+    .noise-overlay {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+      opacity: 0.14;
+      mix-blend-mode: soft-light;
+      z-index: -1;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: linear-gradient(to right, rgba(5, 8, 22, 0.95), rgba(75, 44, 130, 0.9));
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 2px solid #ff9ff3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 24px;
+      background: radial-gradient(circle at 30% 30%, #fff, #ff9ff3);
+      color: #4b2c82;
+    }
+
+    .logo-text {
+      font-family: 'Great Vibes', cursive;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    nav ul li a {
+      padding: 6px 12px;
+      border-radius: 999px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.18);
+    }
+
+    .cta-nav {
+      background: linear-gradient(135deg, #ff9ff3, #feca57);
+      color: #050816;
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cta-nav span {
+      font-size: 18px;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+      }
+    }
+
+    .hero-left small {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      color: #feca57;
+    }
+
+    .hero-title {
+      margin-top: 10px;
+      font-size: 36px;
+      line-height: 1.1;
+    }
+
+    .hero-title span {
+      display: block;
+      font-family: 'Great Vibes', cursive;
+      font-size: 52px;
+      margin-top: 4px;
+      color: #ff9ff3;
+    }
+
+    .typing {
+      display: inline-block;
+      border-right: 2px solid #ff9ff3;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: caret 0.8s steps(1) infinite;
+    }
+
+    @keyframes caret {
+      50% { border-color: transparent; }
+    }
+
+    .hero-sub {
+      margin-top: 18px;
+      font-size: 14px;
+      max-width: 480px;
+      color: #f1f2f6;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+      font-size: 11px;
+    }
+
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(5, 8, 22, 0.55);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-actions {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn-main {
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ff9ff3, #feca57);
+      color: #050816;
+      font-weight: 700;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-outline {
+      padding: 9px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: transparent;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(255, 159, 243, 0.16), rgba(9, 132, 227, 0.16));
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-card img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .hero-card-footer {
+      padding: 14px 18px 16px;
+      background: linear-gradient(to right, rgba(5, 8, 22, 0.95), rgba(75, 44, 130, 0.9));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .hero-card-footer div {
+      font-size: 11px;
+    }
+
+    .hero-card-footer div span {
+      display: block;
+      font-size: 10px;
+      opacity: 0.8;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+    }
+
+    .floating-badge {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg, #ff9ff3, #feca57, #1dd1a1, #54a0ff, #ff9ff3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spin 12s linear infinite;
+    }
+
+    .floating-badge-inner {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #050816;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      text-align: center;
+      padding: 10px;
+      line-height: 1.2;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Sections */
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 20px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #feca57;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: #f1f2f6;
+      max-width: 540px;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .service-card {
+      padding: 16px 16px 18px;
+      border-radius: 16px;
+      background: rgba(5, 8, 22, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(255, 159, 243, 0.16), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .service-desc {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #dfe4ea;
+    }
+
+    ul.service-list {
+      list-style: disc;
+      margin-left: 15px;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #dfe4ea;
+    }
+
+    /* Video Showcase */
+    .video-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .video-card {
+      background: rgba(5, 8, 22, 0.8);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      background: #000;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 16px 18px 20px;
+    }
+
+    .video-title {
+      color: #feca57;
+      font-size: 16px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .video-desc {
+      font-size: 13px;
+      color: #dfe4ea;
+      line-height: 1.5;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+      transform: translateY(0);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item::after {
+      content: "Moon Classy Touch";
+      position: absolute;
+      inset: auto 10px 10px 10px;
+      font-size: 11px;
+      background: linear-gradient(to right, rgba(5, 8, 22, 0.9), rgba(75, 44, 130, 0.9));
+      padding: 6px 10px;
+      border-radius: 999px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all 0.25s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8);
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(5, 8, 22, 0.95);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+      position: relative;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 159, 243, 0.5);
+    }
+
+    /* Contact / Location */
+    .contact-wrap {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 22px;
+    }
+
+    @media (max-width: 800px) {
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-card,
+    .hours-card {
+      padding: 18px 18px 20px;
+      border-radius: 18px;
+      background: rgba(5, 8, 22, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+      font-size: 13px;
+    }
+
+    .contact-item {
+      margin-top: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .contact-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .hours-list {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    .hours-list div {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+
+    .map-frame {
+      margin-top: 14px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      min-height: 200px;
+    }
+
+    footer {
+      margin-top: 20px;
+      padding: 16px 20px 28px;
+      text-align: center;
+      font-size: 11px;
+      color: #dfe4ea;
+      background: rgba(0, 0, 0, 0.7);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    footer span {
+      color: #ff9ff3;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff9ff3, #feca57);
+      color: #050816;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 100;
+      border: none;
+      outline: none;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Small devices */
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 28px;
+      }
+
+      .hero-title span {
+        font-size: 40px;
+      }
+
+      .nav ul {
+        display: none;
+      }
+
+      .cta-nav {
+        padding: 7px 14px;
+      }
+
+      .video-showcase-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animated-bg"></div>
+  <div class="noise-overlay"></div>
+
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-icon">M</div>
+        <div class="logo-text">Moon Classy Salon</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#video-showcase">Videos</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Location</a></li>
+        </ul>
+      </nav>
+      <a href="https://wa.me/254727426795" class="cta-nav">
+        <span>✦</span> WhatsApp Us
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <small>Where class meets beauty</small>
+        <h1 class="hero-title">
+          Welcome to
+          <span class="typing" id="typing"></span>
+        </h1>
+        <p class="hero-sub">
+          Step into a glam oasis in Juakali, near Marvels, Eldoret — a full-service spa, nail parlour and beauty studio for bold looks, soft glam and everyday confidence.
+        </p>
+        <div class="hero-tags">
+          <div class="pill">Luxury spa & facials</div>
+          <div class="pill">Nails, tips & gels</div>
+          <div class="pill">Braids & weave styling</div>
+          <div class="pill">Makeup & micro-blading</div>
+        </div>
+        <div class="hero-actions">
+          <a href="https://wa.me/254727426795?text=Hi%20Moon%20Classy%20Salon%2C%20I%27d%20like%20to%20book%20an%20appointment" class="btn-main">
+            Book on WhatsApp
+            <span>➜</span>
+          </a>
+          <a href="#services" class="btn-outline">
+            View services
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <img src="https://i.postimg.cc/vm9dgTf6/00398b4b5ea78f645851dc3e1b968854.jpg" alt="Moon Classy Salon main poster">
+          <div class="hero-card-footer">
+            <div>
+              Moon Classy Salon
+              <span>Juakali, near Marvels, Eldoret</span>
+            </div>
+            <div class="rating">
+              <span>★★★★★</span>
+              <span>Beauty you can trust</span>
+            </div>
+          </div>
+        </div>
+        <div class="floating-badge">
+          <div class="floating-badge-inner">
+            Nail • Hair • Spa
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2 class="section-title">
+        Our Services
+        <span>Glow from head to toe</span>
+      </h2>
+      <p class="section-sub">
+        From statement nails to relaxing facials, Moon Classy Salon offers a full menu so you can do all your beauty rituals in one cozy, stylish space.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-title">Nails – Gel, Tips & Acrylics</div>
+          <p class="service-desc">
+            Perfect finishes on natural nails and extensions with long‑lasting shine and rich colours for every mood or occasion.
+          </p>
+          <ul class="service-list">
+            <li>Gel polish, builder gel & gum gel</li>
+            <li>Tips, overlays & acrylic sets</li>
+            <li>Nail art, charms & refills</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-title">Hand & Foot Care</div>
+          <p class="service-desc">
+            Pampering sessions that leave your hands and feet soft, hydrated and picture‑ready, finished with your favourite polish.
+          </p>
+          <ul class="service-list">
+            <li>Classic & spa manicure</li>
+            <li>Classic & spa pedicure</li>
+            <li>Cuticle care & foot scrubs</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-title">Facials & Spa Treats</div>
+          <p class="service-desc">
+            Deep cleansing and glow‑boosting facial treatments designed to refresh tired skin and restore a healthy, luminous look.
+          </p>
+          <ul class="service-list">
+            <li>Hydrating & deep‑clean facials</li>
+            <li>Relaxing spa experiences</li>
+            <li>Gentle exfoliation & masks</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-title">Makeup & Brows</div>
+          <p class="service-desc">
+            From soft glam to full bridal, with precise brow work that frames your face and keeps you selfie‑ready all day.
+          </p>
+          <ul class="service-list">
+            <li>Occasion & bridal makeup</li>
+            <li>Eyebrow tinting & shaping</li>
+            <li>Semi‑permanent micro‑blading</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-title">Hair Styling & Braids</div>
+          <p class="service-desc">
+            Trendy protective styles and classic looks that are neat, stylish and comfortable for everyday wear or special events.
+          </p>
+          <ul class="service-list">
+            <li>Cornrows, lines & stitch braids</li>
+            <li>Twists, crotchet & loc styling</li>
+            <li>Wig installation & treatment</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-title">Extra Beauty Touches</div>
+          <p class="service-desc">
+            Finish your look with subtle or bold details that highlight your unique style and personality from head to toe.
+          </p>
+          <ul class="service-list">
+            <li>Ear piercing</li>
+            <li>Tattoos (small & stylish)</li>
+            <li>Builder gel extensions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+<!-- VIDEO SHOWCASE -->
+<section id="video-showcase">
+  <h2 class="section-title">
+    Nail Art Videos
+    <span>Watch the Magic Happen</span>
+  </h2>
+  <p class="section-sub">
+    See the precision, sparkle, and artistry behind our most popular nail designs in motion. Get inspired for your next visit!
+  </p>
+
+  <div class="video-showcase-grid">
+    <!-- Video 1: Sparkle Nails -->
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe 
+          src="https://player.vimeo.com/video/1151862502?background=1&autoplay=1&muted=1&loop=1&playsinline=1"
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          title="Starlit Sparkle Nails - Moon Classy Salon">
+        </iframe>
+      </div>
+      <div class="video-info">
+        <h3 class="video-title">Starlit Sparkle Nails</h3>
+        <p class="video-desc">Mesmerizing square press-ons with glitter and rhinestone details for a dazzling finish.</p>
+      </div>
+    </div>
+
+    <!-- Video 2: Gel Nail Designs -->
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe 
+          src="https://player.vimeo.com/video/1151862400?background=1&autoplay=1&muted=1&loop=1&playsinline=1"
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          title="Chic Gel Nail Art - Moon Classy Salon">
+        </iframe>
+      </div>
+      <div class="video-info">
+        <h3 class="video-title">Chic Gel Nail Art</h3>
+        <p class="video-desc">Elegant gel nail designs and art, showcasing clean lines and modern patterns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <h2 class="section-title">
+        Live Gallery
+        <span>Real looks. Real glam.</span>
+      </h2>
+      <p class="section-sub">
+        A peek at some of the fresh nails, stunning braids, soft glam makeup and detailed brow work created at Moon Classy Salon.
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/3xkhhnwj/0589129e55046567f4fe415b9bab24a3.jpg" alt="Nail art 1" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/Zq3hBnpT/0ad2ad5b12330ed55155db96a7e3d821.jpg" alt="Nail art 2" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/8zxSzMFY/0e06bf40deeee71bd242805d3e5ada04.jpg" alt="Nail art 3" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/BvDGLbHJ/1722fc33577703ec583549dc8ccde82d.jpg" alt="Nail art 4" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/NMcv1tkj/1a392c1317951cf8d436baca35476011.jpg" alt="Lashes / brows 1" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/x1B21MJY/3a1ae070c0ddfc50abc5b66fb5850afc.jpg" alt="Lashes / brows 2" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/TPmXL1mz/3d706c2fbc27ff3ce218877050cce9b1.jpg" alt="Braids 1" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/6QRN2qny/6dde437d6ca27ce365b24db1cf262609.jpg" alt="Braids 2" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/J468S9Mf/978fafe7e2822e58805444e03fa4f5ae.jpg" alt="Braids 3" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/0NmqMjDr/9f74d906a0675c9e7817c7114cca076c.jpg" alt="Braids 4" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/sgbrg7B9/b63dcc1012ba1691d4eb7e5baa586cef.jpg" alt="Braids 5" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/3xkhhnwX/bbc40727170ca2fa3e30ed8335443712.jpg" alt="Makeup 1" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/g0RPXjR1/d1be840aa995688e24f3d080716febe9.jpg" alt="Makeup 2" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/jSDTTZj7/db3dc3accdc2c71d5cdf9321feb12e9e.jpg" alt="Makeup 3" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/13bQ3wgW/ee5a6f4407bb830653de80f12f583a4d.jpg" alt="Nails closeup" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="https://i.postimg.cc/dVgYVr7X/f3f12b9b8fb4e6abe1d2367cd369b1ca.jpg" alt="Braids & style" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / LOCATION -->
+    <section id="contact">
+      <h2 class="section-title">
+        Visit & Contact
+        <span>Juakali • Near Marvels • Eldoret</span>
+      </h2>
+      <p class="section-sub">
+        Walk in for a quick glow‑up or book your slot in advance to enjoy a relaxed, personalised beauty experience with the Moon Classy team.
+      </p>
+
+      <div class="contact-wrap">
+        <div class="contact-card">
+          <h3 style="font-size:16px; margin-bottom:8px;">Contact & Bookings</h3>
+
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <strong>WhatsApp & Calls</strong><br />
+              0727426795<br />
+              <a href="https://wa.me/254727426795" style="color:#ff9ff3; font-size:12px;">Tap here to chat on WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Location</strong><br />
+              Juakali, near Marvels, Eldoret – Kenya
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">💄</div>
+            <div>
+              <strong>Perfect for</strong><br />
+              Everyday glam, graduations, photoshoots, dates, weddings, and "just because" self‑care days.
+            </div>
+          </div>
+        </div>
+
+        <div class="hours-card">
+          <h3 style="font-size:16px; margin-bottom:8px;">Working Hours</h3>
+          <div class="hours-list">
+            <div><span>Monday – Saturday</span><span>9:00 am – 7:00 pm</span></div>
+            <div><span>Sunday & Holidays</span><span>On appointment</span></div>
+          </div>
+
+          <div class="map-frame">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127663.55317312884!2d35.1908065!3d0.5203605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1781035c78367a31%3A0xeca1ed01937dfcac!2sEldoret!5e0!3m2!1sen!2ske!4v1700000000000"
+              width="100%"
+              height="220"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span>Moon Classy Salon</span> – Juakali, near Marvels, Eldoret. All glam, all the time.
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="closeLightbox">&times;</button>
+    <div class="lightbox-content">
+      <img class="lightbox-img" id="lightboxImage" src="" alt="">
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript -->
+  <script>
+    // Typing Effect
+    const text = "Moon Classy Salon";
+    const typingElement = document.getElementById("typing");
+    let index = 0;
+    let deleting = false;
+
+    function typeLoop() {
+      const speed = deleting ? 80 : 140;
+
+      if (!deleting && index <= text.length) {
+        typingElement.textContent = text.slice(0, index);
+        index++;
+      } else if (deleting && index >= 0) {
+        typingElement.textContent = text.slice(0, index);
+        index--;
+      }
+
+      if (index === text.length + 8) {
+        deleting = true;
+      } else if (index === 0 && deleting) {
+        deleting = false;
+      }
+
+      setTimeout(typeLoop, speed);
+    }
+
+    // Start typing after slight delay
+    setTimeout(typeLoop, 600);
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const closeBtn = document.getElementById('closeLightbox');
+    
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    function openLightbox(element) {
+      const img = element.querySelector('img');
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Event Listeners for lightbox
+    closeBtn.addEventListener('click', closeLightbox);
+    
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation for lightbox
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Add video API script
+    const script = document.createElement('script');
+    script.src = 'https://player.vimeo.com/api/player.js';
+    document.body.appendChild(script);
+  </script>
+</body>
+  </html>
