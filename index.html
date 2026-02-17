@@ -1484,22 +1484,22 @@
 
 <style>
 .signature-section {
-    background-color: #000;
-    padding: 40px 0;
+    background-color: #000; /* Black background */
+    padding: 50px 0;
     text-align: center;
     font-family: "Georgia", serif;
-    font-size: 20px;
-    color: #f5f5f5;
+    font-size: 22px;
+    color: #ff69b4; /* Pink text */
     letter-spacing: 2px;
 }
 
 .cursor {
     display: inline-block;
-    width: 2px;
-    height: 20px;
-    background-color: #f5f5f5;
+    width: 3px;
+    height: 22px;
+    background-color: #ff69b4; /* Pink cursor */
     margin-left: 5px;
-    animation: blink 0.8s infinite;
+    animation: blink 0.7s infinite;
 }
 
 @keyframes blink {
@@ -1512,15 +1512,18 @@
 <script>
 const text = "Website Edited by Teranchamp";
 let index = 0;
+const speed = 100; // typing speed in ms
 
-function typeEffect() {
+function typeWriter() {
     if (index < text.length) {
         document.getElementById("typed-text").innerHTML += text.charAt(index);
         index++;
-        setTimeout(typeEffect, 80);
+        setTimeout(typeWriter, speed);
     }
 }
 
+window.addEventListener("load", typeWriter);
+  
 typeEffect();
   
     // Typing Effect
