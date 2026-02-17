@@ -1478,53 +1478,19 @@
   </button>
 
   <!-- JavaScript -->
-<div class="signature-section">
-    <span id="typed-text"></span><span class="cursor"></span>
-</div>
-
-<style>
-.signature-section {
-    background-color: #000; /* Black background */
-    padding: 50px 0;
-    text-align: center;
-    font-family: "Georgia", serif;
-    font-size: 22px;
-    color: #ff69b4; /* Pink text */
-    letter-spacing: 2px;
-}
-
-.cursor {
-    display: inline-block;
-    width: 3px;
-    height: 22px;
-    background-color: #ff69b4; /* Pink cursor */
-    margin-left: 5px;
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-</style>
-
+<div id="signature" style="background:white; color:hotpink; font:1.2rem monospace; padding:0.5rem;"></div>
 <script>
-const text = "Website Edited by Teranchamp";
-let index = 0;
-const speed = 100; // typing speed in ms
-
-function typeWriter() {
-    if (index < text.length) {
-        document.getElementById("typed-text").innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, speed);
+  const el = document.getElementById('signature');
+  const text = 'Made by Teranchamp';
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      el.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 150);
     }
-}
-
-window.addEventListener("load", typeWriter);
-  
-typeEffect();
+  }
+  typeWriter();
   
     // Typing Effect
     const text = "Moon Classy Salon";
