@@ -1478,19 +1478,50 @@
   </button>
 
   <!-- JavaScript -->
-<div id="signature" style="background:white; color:hotpink; font:1.2rem monospace; padding:0.5rem;"></div>
+<div class="signature-section">
+    <span id="typed-text"></span><span class="cursor"></span>
+</div>
+
+<style>
+.signature-section {
+    background-color: white;        /* white background */
+    padding: 40px 0;
+    text-align: center;
+    font-family: "Georgia", serif;
+    font-size: 20px;
+    color: hotpink;                 /* pink text */
+    letter-spacing: 2px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background-color: hotpink;      /* pink cursor to match */
+    margin-left: 5px;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+</style>
+
 <script>
-  const el = document.getElementById('signature');
-  const text = 'Made by Teranchamp';
-  let i = 0;
-  function typeWriter() {
-    if (i < text.length) {
-      el.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, 150);
+const text = "Made by Teranchamp";   // changed text
+let index = 0;
+
+function typeEffect() {
+    if (index < text.length) {
+        document.getElementById("typed-text").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 80);
     }
-  }
-  typeWriter();
+}
+
+typeEffect();
   
     // Typing Effect
     const text = "Moon Classy Salon";
