@@ -1509,19 +1509,21 @@
 }
 </style>
 
-<script>
-const text = "Made by Teranchamp";   // changed text
-let index = 0;
+<div class="signature-section">
+    Made by Teranchamp 0717028877
+</div>
 
-function typeEffect() {
-    if (index < text.length) {
-        document.getElementById("typed-text").innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, 80);
-    }
+<style>
+.signature-section {
+    background-color: white;
+    padding: 40px 0;
+    text-align: center;
+    font-family: "Georgia", serif;
+    font-size: 20px;
+    color: hotpink;
+    letter-spacing: 2px;
 }
-
-typeEffect();
+</style>
   
     // Typing Effect
     const text = "Moon Classy Salon";
